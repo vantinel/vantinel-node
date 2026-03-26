@@ -1,0 +1,42 @@
+name: Auto-tag on version bump
+
+# When any package.json changes on main, check the node-sdk version
+# (the monorepo's canonical version). If a v{version} tag doesn't
+# exist yet, create it — which triggers the Publish to npm workflow.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/*/package.json"
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create v* tag if version is new
+        run: |
+          # Use node-sdk as the canonical monorepo version
+          VERSION=$(node -p "require('./packages/node-sdk/package.json').version")
+          TAG="v${VERSION}"
+
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping"
+          else
+            echo "Creating tag $TAG for version $VERSION"
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
