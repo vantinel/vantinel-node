@@ -3,8 +3,8 @@
  *
  * Usage:
  *   import Anthropic from '@anthropic-ai/sdk';
- *   import { VantinelClient } from '@vantinel/node-sdk';
- *   import { wrapAnthropic } from '@vantinel/node-sdk/integrations/anthropic';
+ *   import { VantinelClient } from '@vantinelai/node-sdk';
+ *   import { wrapAnthropic } from '@vantinelai/node-sdk/integrations/anthropic';
  *
  *   const client = new VantinelClient({ apiKey: '...', clientId: '...' });
  *   const anthropic = wrapAnthropic(client, new Anthropic());

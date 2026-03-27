@@ -3,7 +3,7 @@
 // Writes Vantinel MCP proxy entry into openclaw.json on plugin install
 // ==========================================
 
-import { writeOpenclawConfig } from '@vantinel/openclaw';
+import { writeOpenclawConfig } from '@vantinelai/openclaw';
 import type { VantinelPluginConfig } from './types.js';
 
 /**

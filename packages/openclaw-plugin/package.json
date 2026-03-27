@@ -1,5 +1,5 @@
 {
-  "name": "@vantinel/openclaw-plugin",
+  "name": "@vantinelai/openclaw-plugin",
   "version": "1.0.1",
   "description": "Vantinel Guardrails plugin for OpenClaw — real-time policy enforcement and observability",
   "main": "./dist/index.js",
@@ -38,7 +38,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@vantinel/openclaw": "*",
+    "@vantinelai/openclaw": "*",
     "zod": "^3.22.0"
   },
   "devDependencies": {

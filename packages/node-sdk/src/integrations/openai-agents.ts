@@ -2,8 +2,8 @@
  * OpenAI Agents SDK integration for Vantinel.
  *
  * Usage:
- *   import { VantinelClient } from '@vantinel/node-sdk';
- *   import { patchOpenAIAgents } from '@vantinel/node-sdk/integrations/openai-agents';
+ *   import { VantinelClient } from '@vantinelai/node-sdk';
+ *   import { patchOpenAIAgents } from '@vantinelai/node-sdk/integrations/openai-agents';
  *
  *   const client = new VantinelClient({ apiKey: '...', clientId: '...' });
  *   patchOpenAIAgents(client);

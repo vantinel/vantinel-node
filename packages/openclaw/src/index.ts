@@ -4,7 +4,7 @@
  * One-line setup for Vantinel observability with OpenClaw / NemoClaw agents.
  *
  * @example
- * import { setup } from '@vantinel/openclaw'
+ * import { setup } from '@vantinelai/openclaw'
  * await setup({ apiKey: 'vntl_...', gatewayUrl: 'http://localhost:8000' })
  */
 

@@ -1,4 +1,4 @@
-import { VantinelMonitor, VantinelConfig } from '@vantinel/node-sdk';
+import { VantinelMonitor, VantinelConfig } from '@vantinelai/node-sdk';
 
 /**
  * Server-side Vantinel monitor singleton for Next.js.
@@ -10,7 +10,7 @@ import { VantinelMonitor, VantinelConfig } from '@vantinel/node-sdk';
  *
  * ```ts
  * // lib/vantinel.server.ts
- * import { createServerMonitor } from '@vantinel/nextjs/server';
+ * import { createServerMonitor } from '@vantinelai/nextjs/server';
  *
  * export const monitor = createServerMonitor({
  *   agentId: 'my-nextjs-app',

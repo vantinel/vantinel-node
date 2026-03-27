@@ -1,6 +1,6 @@
 'use client';
 
-import { VantinelClient, VantinelConfig } from '@vantinel/js-sdk';
+import { VantinelClient, VantinelConfig } from '@vantinelai/js-sdk';
 
 /**
  * Browser-side Vantinel client singleton for Next.js Client Components.
@@ -10,7 +10,7 @@ import { VantinelClient, VantinelConfig } from '@vantinel/js-sdk';
  * ```ts
  * // lib/vantinel.client.ts
  * 'use client';
- * import { createClientVantinel } from '@vantinel/nextjs/client';
+ * import { createClientVantinel } from '@vantinelai/nextjs/client';
  *
  * export const vantinel = createClientVantinel({
  *   agentId: 'browser-agent',

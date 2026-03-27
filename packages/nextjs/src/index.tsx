@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
-import { VantinelClient, VantinelConfig, VantinelDecision } from '@vantinel/js-sdk';
+import { VantinelClient, VantinelConfig, VantinelDecision } from '@vantinelai/js-sdk';
 
 interface VantinelContextValue {
   client: VantinelClient;
@@ -34,7 +34,7 @@ export interface VantinelProviderProps {
  * ## Setup (app/layout.tsx)
  *
  * ```tsx
- * import { VantinelProvider } from '@vantinel/nextjs';
+ * import { VantinelProvider } from '@vantinelai/nextjs';
  *
  * export default function RootLayout({ children }: { children: React.ReactNode }) {
  *   return (
@@ -85,7 +85,7 @@ export function VantinelProvider({ config, children }: VantinelProviderProps) {
  *
  * ```tsx
  * 'use client';
- * import { useVantinel } from '@vantinel/nextjs';
+ * import { useVantinel } from '@vantinelai/nextjs';
  *
  * export function GenerateButton({ topics }: { topics: string[] }) {
  *   const { track, captureError, startTrace } = useVantinel();
