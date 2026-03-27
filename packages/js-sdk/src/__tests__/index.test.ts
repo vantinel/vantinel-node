@@ -90,11 +90,13 @@ describe('VantinelClient (Browser SDK)', () => {
       await client.track('search', {});
 
       const [, init] = mockFetch.mock.calls[0];
-      expect(init.headers['X-Vantinel-API-Key']).toBe('my-api-key');
-      expect(init.headers['Content-Type']).toBe('application/json');
-      expect(init.headers['X-Vantinel-Signature']).toBeDefined();
-      expect(init.headers['X-Vantinel-Timestamp']).toBeDefined();
-      expect(init.headers['X-Vantinel-Nonce']).toBeDefined();
+      const headers = init.headers as any;
+      const getHeader = (key: string) => (headers && typeof headers.get === 'function') ? headers.get(key) : headers[key];
+      expect(getHeader('X-Vantinel-API-Key')).toBe('my-api-key');
+      expect(getHeader('Content-Type')).toBe('application/json');
+      expect(getHeader('X-Vantinel-Signature')).toBeDefined();
+      expect(getHeader('X-Vantinel-Timestamp']).toBeDefined();
+      expect(getHeader('X-Vantinel-Nonce')).toBeDefined();
     });
 
     it('returns allow immediately when skip is true', async () => {
@@ -270,8 +272,8 @@ describe('VantinelClient (Browser SDK)', () => {
 
       const [, init] = mockFetch.mock.calls[0];
       const body = JSON.parse(init.body);
-      expect(body.env).toBe('production');
-      expect(body.app).toBe('my-agent');
+      expect(body.metadata.env).toBe('production');
+      expect(body.metadata.app).toBe('my-agent');
     });
 
     it('merges additional metadata without overwriting', async () => {
@@ -282,8 +284,8 @@ describe('VantinelClient (Browser SDK)', () => {
 
       const [, init] = mockFetch.mock.calls[0];
       const body = JSON.parse(init.body);
-      expect(body.a).toBe(1);
-      expect(body.b).toBe(2);
+      expect(body.metadata.a).toBe(1);
+      expect(body.metadata.b).toBe(2);
     });
   });
 
@@ -308,7 +310,7 @@ describe('VantinelClient (Browser SDK)', () => {
 
       const [, init] = mockFetch.mock.calls[0];
       const body = JSON.parse(init.body);
-      expect(body.attempt).toBe(3);
+      expect(body.metadata.attempt).toBe(3);
     });
 
     it('does not send in dryRun mode', async () => {
