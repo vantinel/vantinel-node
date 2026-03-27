@@ -1,6 +1,6 @@
 {
   "name": "@vantinelai/nextjs",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Vantinel AI Observability SDK — Next.js App Router integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

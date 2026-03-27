@@ -1,6 +1,6 @@
 {
   "name": "@vantinelai/openclaw",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-line Vantinel observability setup for OpenClaw and NemoClaw autonomous agents",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -17,7 +17,13 @@
     "dev": "tsc --watch",
     "clean": "rm -rf dist"
   },
-  "keywords": ["vantinel", "openclaw", "nemoclaw", "ai-agent", "observability"],
+  "keywords": [
+    "vantinel",
+    "openclaw",
+    "nemoclaw",
+    "ai-agent",
+    "observability"
+  ],
   "author": "Vantinel AI <support@vantinel.com>",
   "license": "MIT",
   "repository": {

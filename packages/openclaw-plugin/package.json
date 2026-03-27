@@ -1,6 +1,6 @@
 {
   "name": "@vantinelai/openclaw-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vantinel Guardrails plugin for OpenClaw — real-time policy enforcement and observability",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
