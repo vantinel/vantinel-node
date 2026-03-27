@@ -5,11 +5,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build -w packages/js-sdk -w packages/node-sdk -w packages/mcp && npm run build -w packages/nextjs -w packages/openclaw && npm run build -w packages/openclaw-plugin",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   }
 }
