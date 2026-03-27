@@ -6,7 +6,7 @@
  *   import { VantinelClient } from '@vantinelai/node-sdk';
  *   import { wrapAnthropic } from '@vantinelai/node-sdk/integrations/anthropic';
  *
- *   const client = new VantinelClient({ apiKey: '...', clientId: '...' });
+ *   const client = new VantinelClient({ apiKey: '...', projectId: '...' });
  *   const anthropic = wrapAnthropic(client, new Anthropic());
  *
  *   const response = await anthropic.messages.create({

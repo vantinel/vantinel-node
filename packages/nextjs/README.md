@@ -17,7 +17,7 @@ npm install @vantinel/nextjs
 ```bash
 # .env.local
 VANTINEL_API_KEY=vantinel_abc123
-VANTINEL_CLIENT_ID=my-company
+VANTINEL_PROJECT_ID=my-company
 
 # Exposed to the browser
 NEXT_PUBLIC_VANTINEL_API_KEY=vantinel_abc123
@@ -76,7 +76,7 @@ import { createServerMonitor } from '@vantinel/nextjs/server';
 
 const monitor = createServerMonitor({
   apiKey: process.env.VANTINEL_API_KEY!,
-  clientId: process.env.VANTINEL_CLIENT_ID!,
+  projectId: process.env.VANTINEL_PROJECT_ID!,
 });
 
 export async function POST(req: Request) {
@@ -132,7 +132,7 @@ import { createServerMonitor } from '@vantinel/nextjs/server';
 
 const monitor = createServerMonitor({
   apiKey: process.env.VANTINEL_API_KEY!,
-  clientId: process.env.VANTINEL_CLIENT_ID!,
+  projectId: process.env.VANTINEL_PROJECT_ID!,
   agentId: 'api-route-agent',
   dryRun: process.env.VANTINEL_DRY_RUN === 'true',
 });
@@ -188,7 +188,7 @@ export async function POST(req: Request) {
 | Variable | Required | Description |
 |---|---|---|
 | `VANTINEL_API_KEY` | Yes | API key |
-| `VANTINEL_CLIENT_ID` | Yes | Organization ID |
+| `VANTINEL_PROJECT_ID` | Yes | Organization ID |
 | `VANTINEL_COLLECTOR_URL` | No | Defaults to `http://localhost:8000` |
 | `VANTINEL_DRY_RUN` | No | Set `true` to disable HTTP in CI |
 | `VANTINEL_SHADOW_MODE` | No | Set `true` for shadow mode |

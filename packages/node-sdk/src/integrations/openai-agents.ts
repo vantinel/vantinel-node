@@ -5,7 +5,7 @@
  *   import { VantinelClient } from '@vantinelai/node-sdk';
  *   import { patchOpenAIAgents } from '@vantinelai/node-sdk/integrations/openai-agents';
  *
- *   const client = new VantinelClient({ apiKey: '...', clientId: '...' });
+ *   const client = new VantinelClient({ apiKey: '...', projectId: '...' });
  *   patchOpenAIAgents(client);
  *   // Now all @openai/agents traces are automatically monitored
  */

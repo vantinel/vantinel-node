@@ -12,7 +12,7 @@ export interface VantinelDecision {
 
 export interface VantinelConfig {
   apiKey?: string;
-  clientId?: string;
+  projectId?: string;
   collectorUrl?: string;
   agentId?: string;
   dryRun?: boolean;
@@ -601,10 +601,11 @@ export class VantinelClient {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Vantinel-API-Key': this.config.apiKey || '',
           'X-Vantinel-Signature': signature,
           'X-Vantinel-Timestamp': String(timestamp),
           'X-Vantinel-Nonce': nonce,
-          'X-Vantinel-Client': this.config.clientId || '',
+          'X-Vantinel-Project': this.config.projectId || '',
         },
         body,
       });

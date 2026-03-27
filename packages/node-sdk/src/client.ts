@@ -3,7 +3,7 @@ import { hmacSign, validateCollectorUrl, generateNonce } from './security';
 
 export interface VantinelConfig {
   apiKey?: string;
-  clientId?: string;
+  projectId?: string;
   collectorUrl?: string;
   agentId?: string;
   dryRun?: boolean;
@@ -19,7 +19,7 @@ export interface VantinelConfig {
 }
 
 export interface VantinelEvent {
-  client_id?: string;
+  project_id?: string;
   session_id: string;
   agent_id?: string;
   tool_name: string;
@@ -171,7 +171,7 @@ export class VantinelClient {
       'X-Vantinel-Signature': signature,
       'X-Vantinel-Timestamp': String(timestamp),
       'X-Vantinel-Nonce': nonce,
-      'X-Vantinel-Client': this.config.clientId || '',
+      'X-Vantinel-Project': this.config.projectId || '',
     };
 
     let lastError: Error | null = null;

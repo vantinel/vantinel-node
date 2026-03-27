@@ -27,7 +27,7 @@ describe('VantinelClient.wrapOpenAI (Browser SDK)', () => {
     mockFetch.mockImplementation(() => allowResponse());
     client = new VantinelClient({
       apiKey: 'test-api-key',
-      clientId: 'test-client',
+      projectId: 'test-client',
       collectorUrl: 'http://localhost:8000',
     });
   });

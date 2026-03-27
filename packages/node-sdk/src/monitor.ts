@@ -12,7 +12,7 @@ export class VantinelMonitor {
   constructor(config: VantinelConfig = {}) {
     this.config = {
       apiKey: process.env.VANTINEL_API_KEY,
-      clientId: process.env.VANTINEL_CLIENT_ID,
+      projectId: process.env.VANTINEL_PROJECT_ID,
       collectorUrl: process.env.VANTINEL_COLLECTOR_URL || 'http://localhost:8000',
       agentId: process.env.VANTINEL_AGENT_ID || 'default-agent',
       ...config,

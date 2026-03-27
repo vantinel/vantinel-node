@@ -17,6 +17,6 @@
 - `createClientVantinel()` — module-level singleton for Client Components (without the Provider pattern)
 - Full TypeScript support with typed exports
 - Environment variable guidance:
-  - Server: `VANTINEL_API_KEY`, `VANTINEL_CLIENT_ID`, `VANTINEL_COLLECTOR_URL`, `VANTINEL_DRY_RUN`, `VANTINEL_SHADOW_MODE`
+  - Server: `VANTINEL_API_KEY`, `VANTINEL_PROJECT_ID`, `VANTINEL_COLLECTOR_URL`, `VANTINEL_DRY_RUN`, `VANTINEL_SHADOW_MODE`
   - Browser: `NEXT_PUBLIC_VANTINEL_API_KEY`, `NEXT_PUBLIC_VANTINEL_COLLECTOR_URL`
 - Trace correlation pattern: `startTrace()` on browser → pass via `X-Vantinel-Trace` header → backend `monitor(fn, { traceId })`

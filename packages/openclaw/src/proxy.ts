@@ -6,7 +6,7 @@ export interface ProxyOptions {
   mode?: 'openclaw' | 'nemoclaw' | 'generic';
   collectorUrl?: string;
   apiKey?: string;
-  clientId?: string;
+  projectId?: string;
 }
 
 /**
@@ -30,7 +30,7 @@ export async function startMcpProxy(
 
   if (options.collectorUrl) env['VANTINEL_COLLECTOR_URL'] = options.collectorUrl;
   if (options.apiKey) env['VANTINEL_API_KEY'] = options.apiKey;
-  if (options.clientId) env['VANTINEL_CLIENT_ID'] = options.clientId;
+  if (options.projectId) env['VANTINEL_PROJECT_ID'] = options.projectId;
   if (options.mode) env['VANTINEL_MODE'] = options.mode;
 
   const args = ['--mode', mode, '--', targetCommand, ...targetArgs];

@@ -86,7 +86,7 @@ describe('VantinelClient (Browser SDK)', () => {
     });
 
     it('includes correct headers', async () => {
-      const client = new VantinelClient({ apiKey: 'my-api-key', clientId: 'client-a' });
+      const client = new VantinelClient({ apiKey: 'my-api-key', projectId: 'client-a' });
       await client.track('search', {});
 
       const [, init] = mockFetch.mock.calls[0];
@@ -95,7 +95,7 @@ describe('VantinelClient (Browser SDK)', () => {
       expect(getHeader('X-Vantinel-API-Key')).toBe('my-api-key');
       expect(getHeader('Content-Type')).toBe('application/json');
       expect(getHeader('X-Vantinel-Signature')).toBeDefined();
-      expect(getHeader('X-Vantinel-Timestamp']).toBeDefined();
+      expect(getHeader('X-Vantinel-Timestamp')).toBeDefined();
       expect(getHeader('X-Vantinel-Nonce')).toBeDefined();
     });
 

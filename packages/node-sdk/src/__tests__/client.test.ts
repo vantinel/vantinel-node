@@ -90,7 +90,7 @@ describe('VantinelClient', () => {
 
     it('sends correct headers', async () => {
       mockAxiosInstance.post.mockResolvedValue({ data: { decision: 'allow' } });
-      const client = new VantinelClient({ apiKey: 'test-api-key', clientId: 'client-a' });
+      const client = new VantinelClient({ apiKey: 'test-api-key', projectId: 'client-a' });
 
       await client.sendEvent({
         session_id: 's',
@@ -102,7 +102,7 @@ describe('VantinelClient', () => {
       const callArgs = mockAxiosInstance.post.mock.calls[0];
       const headers = callArgs[2]?.headers as Record<string, string>;
       expect(headers['X-Vantinel-API-Key']).toBe('test-api-key');
-      expect(headers['X-Vantinel-Client']).toBe('client-a');
+      expect(headers['X-Vantinel-Project']).toBe('client-a');
       expect(headers['Content-Type']).toBe('application/json');
       expect(headers['X-Vantinel-Signature']).toBeDefined();
       expect(headers['X-Vantinel-Timestamp']).toBeDefined();

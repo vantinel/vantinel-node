@@ -19,7 +19,7 @@ import { VantinelMonitor } from '@vantinel/node-sdk';
 
 const monitor = new VantinelMonitor({
   apiKey: process.env.VANTINEL_API_KEY,
-  clientId: 'my-company',
+  projectId: 'my-company',
   agentId: 'customer-support-bot',
 });
 
@@ -37,7 +37,7 @@ const results = await search('SELECT * FROM users');
 | Option | Type | Default | Description |
 |---|---|---|---|
 | `apiKey` | `string` | `$VANTINEL_API_KEY` | Your Vantinel API key |
-| `clientId` | `string` | `$VANTINEL_CLIENT_ID` | Your organization ID |
+| `projectId` | `string` | `$VANTINEL_PROJECT_ID` | Your organization ID |
 | `agentId` | `string` | `'default-agent'` | Identifier for this agent |
 | `collectorUrl` | `string` | `http://localhost:8000` | Vantinel Collector endpoint |
 | `dryRun` | `boolean` | `false` | Log events without sending (useful in CI) |
@@ -48,7 +48,7 @@ const results = await search('SELECT * FROM users');
 | `retry.backoffMs` | `number` | `100` | Base backoff between retries |
 | `slackWebhookUrl` | `string` | — | Shadow Mode Slack alerts webhook |
 
-All options also read from environment variables (`VANTINEL_API_KEY`, `VANTINEL_CLIENT_ID`, `VANTINEL_DRY_RUN`, `VANTINEL_SHADOW_MODE`, etc.).
+All options also read from environment variables (`VANTINEL_API_KEY`, `VANTINEL_PROJECT_ID`, `VANTINEL_DRY_RUN`, `VANTINEL_SHADOW_MODE`, etc.).
 
 ## API
 

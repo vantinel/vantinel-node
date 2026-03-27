@@ -14,7 +14,7 @@ import { VantinelMonitor, VantinelConfig } from '@vantinelai/node-sdk';
  *
  * export const monitor = createServerMonitor({
  *   agentId: 'my-nextjs-app',
- *   // Reads VANTINEL_API_KEY, VANTINEL_CLIENT_ID, VANTINEL_COLLECTOR_URL from env automatically
+ *   // Reads VANTINEL_API_KEY, VANTINEL_PROJECT_ID, VANTINEL_COLLECTOR_URL from env automatically
  * });
  * ```
  *
@@ -50,7 +50,7 @@ import { VantinelMonitor, VantinelConfig } from '@vantinelai/node-sdk';
  *
  * ## Environment Variables (server-side — never expose to browser)
  * - `VANTINEL_API_KEY`         — required
- * - `VANTINEL_CLIENT_ID`       — your org/project identifier
+ * - `VANTINEL_PROJECT_ID`       — your org/project identifier
  * - `VANTINEL_COLLECTOR_URL`   — defaults to http://localhost:8000
  * - `VANTINEL_AGENT_ID`        — defaults to 'default-agent'
  * - `VANTINEL_DRY_RUN`         — set to 'true' in CI to disable sending

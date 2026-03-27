@@ -15,7 +15,7 @@
 - `shadowMode` config option — when a call would be blocked, logs warning and sends Slack alert instead of blocking; perfect for "prove value before enforcing" adoption
 - `slackWebhookUrl` config option — Shadow Mode sends Slack alerts: "Vantinel would have blocked `tool_name`. Estimated savings: $Y"
 - `startTrace()` — generate a trace ID to correlate browser events with backend AI calls via `X-Vantinel-Trace` header
-- `clientId` config option — now matches node-sdk config shape (no more divergent configs)
+- `projectId` config option — now matches node-sdk config shape (no more divergent configs)
 - `dryRun` config option — log events without sending (now matches node-sdk)
 - `setGlobalMetadata()` — set `userId`, `tenantId` once; auto-included in every event
 - `captureError()` — report browser-side AI errors
